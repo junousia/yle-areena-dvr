@@ -1,6 +1,6 @@
 [project]
 name = "yle-areena-dvr"
-version = "0.1.0"
+version = "0.1.1"
 description = "A tool for Yle Areena to download movies and series of interest."
 readme = "README.md"
 license = "MIT"
@@ -32,6 +32,7 @@ Homepage = "https://github.com/junousia/yle-areena-dvr"
 Issues = "https://github.com/junousia/yle-areena-dvr/issues"
 
 [project.scripts]
+yle-areena-dvr = "yle_areena_dvr.cli:main"  # matches the package name, so `uvx yle-areena-dvr` works
 yle-dvr = "yle_areena_dvr.cli:main"
 
 [build-system]

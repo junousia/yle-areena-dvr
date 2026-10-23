@@ -26,6 +26,12 @@ uv sync
 uv tool install .
 ```
 
+Or run it straight from PyPI without installing anything:
+
+```bash
+uvx yle-areena-dvr --help      # also available under the short name `yle-dvr`
+```
+
 ## Setup
 
 1. Copy `.env.template` to `.env`:
