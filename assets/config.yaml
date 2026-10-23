@@ -1,0 +1,26 @@
+# Yle Areena DVR Configuration
+
+# File Naming and Directory Structure Templates
+# Available tokens: {title}, {year}, {id}, {genres}, {rating}
+naming:
+  movie_folder: "movies"
+  movie_filename: "{title} ({year}).%(ext)s"
+  series_folder: "series/{title}"
+  series_filename: "{title} - S{season_number}E{episode_number} - {episode_title}.%(ext)s"
+  presets:
+    plex-movie: "{title} ({year}).%(ext)s"
+    plex-series: "{title} - S{season_number}E{episode_number} - {episode_title}.%(ext)s"
+    title-only: "{title}.%(ext)s"
+
+# Download Settings
+download:
+  base_directory: "./downloads"
+  format: "bv*+ba/b"
+  merge_output_format: "mkv"
+  subtitles:
+    enabled: true
+    languages: ["fi", "sv", "en"]
+
+# Rating Filtering (Min rating to auto-download)
+filters:
+  min_imdb_rating: 7.0

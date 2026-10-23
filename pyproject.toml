@@ -1,0 +1,23 @@
+[project]
+name = "yle-areena-dvr"
+version = "0.1.0"
+description = "A tool for Yle Areena to download movies and series of interest."
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    "yt-dlp",
+    "httpx",
+    "aiosqlite",
+    "sqlmodel",
+    "pydantic",
+    "pydantic-settings",
+    "pydantic-cli",
+    "pyyaml",
+]
+
+[project.scripts]
+yle-dvr = "yle_areena_dvr.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

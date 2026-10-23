@@ -1,0 +1,27 @@
+# Secrets
+.env
+*.key
+*.pem
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Local runtime data
+*.db
+*.sqlite
+*.sqlite3
+.tmdb-cache.json
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+node_modules/
+dist/
+state.json
