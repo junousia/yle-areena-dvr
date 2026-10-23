@@ -6,7 +6,7 @@ from pathlib import Path
 from .client import YleClient
 from .downloader import YleDownloader
 from .rating import TMDbClient, TMDbUnavailable
-from .config import Settings, load_yaml_config
+from .config import DEFAULT_CONFIG_PATH, Settings, load_yaml_config
 from .models import Program
 from .db import init_db, get_program, save_program, mark_existing_program_seen, search_programs_db, get_programs_missing_year
 
@@ -64,7 +64,7 @@ class SearchCmd(Cmd):
 class DownloadCmd(Cmd):
     """Download a program by ID"""
     id: str = Field(..., description="The Yle Areena program ID (e.g., 1-1234567)")
-    config_path: Path = Field(Path("assets/config.yaml"), description="Path to the config.yaml file")
+    config_path: Path = Field(DEFAULT_CONFIG_PATH, description="Path to the config.yaml file")
     naming_preset: str | None = Field(None, description="Naming preset key from config naming.presets")
     output_template: str | None = Field(None, description="Custom yt-dlp output template (overrides preset)")
     dry_run: bool = Field(False, description="Print resolved output template/path without downloading")
@@ -290,7 +290,7 @@ class DetailsCmd(Cmd):
 
 class NamingCmd(Cmd):
     """List configured naming presets"""
-    config_path: Path = Field(Path("assets/config.yaml"), description="Path to the config.yaml file")
+    config_path: Path = Field(DEFAULT_CONFIG_PATH, description="Path to the config.yaml file")
     output_json: bool = Field(False, description="Output raw JSON")
 
     def run(self):
